@@ -1,6 +1,6 @@
 {
-  "name": "国際引受条件",
-  "short_name": "国際引受条件",
+  "name": "引受条件",
+  "short_name": "引受条件",
   "display": "standalone",
   "start_url": "./",
   "scope": "./",
