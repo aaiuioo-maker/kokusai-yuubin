@@ -445,7 +445,6 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, 
     <label>荷物の重さを入力 (グラム)</label>
     <div class="k-input-group">
       <input type="text" id="k-weight" placeholder="例: 1240" inputmode="numeric" autocomplete="off" enterkeyhint="done">
-      <button class="k-btn-mic" id="k-mic" onclick="kVoice()" aria-label="音声で入力">🎤</button>
       <button class="k-btn-clear" onclick="kClear()">クリア</button>
     </div>
     <div class="k-voice" id="k-voice"></div>
@@ -806,17 +805,7 @@ function kVoiceMsg(html){
   const el=document.getElementById('k-voice');
   if(html){el.innerHTML=html;el.style.display='block';}else{el.style.display='none';}
 }
-function kStopVoice(){ document.getElementById('k-mic').classList.remove('listening'); }
-// 🎤ボタン: 文字キーボードで開いて、キーボードのマイクで話してもらう
-function kVoice(){
-  sndYbChk();
-  const inp=document.getElementById('k-weight');
-  inp.setAttribute('inputmode','text');
-  inp.value='';
-  kMsg('');
-  document.getElementById('k-mic').classList.add('listening');
-  inp.blur(); inp.focus();
-}
+function kStopVoice(){ document.getElementById('k-mic')?.classList.remove('listening'); }
 document.getElementById('k-weight')?.addEventListener('blur',function(){ kStopVoice(); this.setAttribute('inputmode','numeric'); });
 
 const kEmsSteps=[500,600,700,800,900,1000,1250,1500,1750,2000,2500,3000,3500,4000,4500,5000,5500,6000,7000,8000,9000,10000,11000,12000,13000,14000,15000,16000,17000,18000,19000,20000,21000,22000,23000,24000,25000,26000,27000,28000,29000,30000];
