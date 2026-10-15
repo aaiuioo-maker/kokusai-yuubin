@@ -1,6 +1,6 @@
 {
-  "name": "国際郵便料金・引受条件",
-  "short_name": "国際郵便",
+  "name": "国際小包料金・引受条件",
+  "short_name": "国際小包",
   "display": "standalone",
   "start_url": "./",
   "scope": "./",
